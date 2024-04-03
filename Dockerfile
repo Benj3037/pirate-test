@@ -16,9 +16,6 @@ COPY ./app ./app
 
 RUN poetry install --no-interaction --no-ansi
 
-# add secret at build time
-RUN --mount=type=secret,id=TOGETHER_API_KEY,mode=0444,required=true
+EXPOSE 8080
 
-EXPOSE 7860
-
-CMD ["uvicorn", "app.server:app", "--host", "0.0.0.0", "--port", "7860"]
+CMD exec uvicorn app.server:app --host 0.0.0.0 --port 8080

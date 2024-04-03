@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "BDS_M5_Pirate"
+name = "pirate-in-class"
 version = "0.1.0"
 description = ""
 authors = ["Your Name <you@example.com>"]
@@ -12,10 +12,10 @@ packages = [
 python = "^3.11"
 uvicorn = "^0.23.2"
 langserve = {extras = ["server"], version = ">=0.0.30"}
-pydantic = "2.6.0"
-pirate-speak = {path = "packages/pirate-speak", develop = true}
+pydantic = "<2"
+pirate-speak = {path = "packages\\pirate-speak", develop = true}
 python-dotenv = "1"
-langchain-together = "0.0.2.post1"
+langchain-cli = "0.0.2.post1"
 
 [tool.poetry.group.dev.dependencies]
 langchain-cli = ">=0.0.15"
